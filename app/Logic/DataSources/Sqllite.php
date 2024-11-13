@@ -29,7 +29,7 @@ class Sqllite
         $schema = collect(DB::select("SELECT * FROM sqlite_master WHERE tbl_name != 'sqlite_sequence'"))->map(function ($table) {
             return $table->sql;
         });
-
+        
         return [
             'tables' => $schema,
         ];
